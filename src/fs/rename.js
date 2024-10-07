@@ -1,7 +1,6 @@
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
 import { rename as renameFs, stat } from 'node:fs/promises';
-import { stdout } from 'node:process';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const SOURCE_FILE = join(__dirname, 'files', 'wrongFilename.txt');
