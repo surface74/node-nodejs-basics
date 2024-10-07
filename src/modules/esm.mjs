@@ -3,11 +3,13 @@ import { release, version } from 'node:os';
 import { createServer as createServerHttp } from 'node:http';
 import './files/c.js';
 import { fileURLToPath } from 'node:url';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
 
 const random = Math.random();
 
-const unknownObject = await import(random > 0.5 ? './files/a.json' : './files/b.json',
-    { with: { type: 'json' } });
+const unknownObject = random > 0.5 ? require('./files/a.json') : require('./files/b.json');
 
 console.log(`Release ${release()}`);
 console.log(`Version ${version()}`);
