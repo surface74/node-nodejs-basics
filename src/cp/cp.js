@@ -9,5 +9,4 @@ const spawnChildProcess = async (args) => {
     fork(CHILD_PROCESS_FILE, args, { stdio: ['inherit', 'inherit', 'inherit', 'ipc'] });
 };
 
-// Put your arguments in function call to test this functionality
 spawnChildProcess( ['Hi', 'there!']);
